@@ -1,0 +1,32 @@
+{
+  "name": "getCurrentAcceleration",
+  "ns": "phonegap",
+  "title": "Get Current Acceleration",
+  "description": "The accelerometer is a motion sensor that detects the change (delta) in movement relative to the current device orientation. The accelerometer can detect 3D movement along the x, y, and z axis.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Getting Acceleration"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "frequency": {
+        "title": "Frequency",
+        "type": "number",
+        "default": 10000
+      }
+    },
+    "output": {
+      "acceleration": {
+        "title": "Acceleration",
+        "type": "object"
+      },
+      "error": {
+        "title": "Error",
+        "type": "object"
+      }
+    }
+  }
+}

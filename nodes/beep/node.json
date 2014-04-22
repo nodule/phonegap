@@ -1,0 +1,24 @@
+{
+  "name": "beep",
+  "ns": "phonegap",
+  "title": "Beep",
+  "description": "The device will play a beep sound.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Beeping"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "times": {
+        "title": "Times",
+        "type": "number",
+        "default": 1
+      }
+    },
+    "output": {
+    }
+  }
+}

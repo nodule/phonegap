@@ -1,0 +1,23 @@
+{
+  "name": "clearWatch",
+  "ns": "phonegap",
+  "title": "Clear Watch",
+  "description": "Stop watching for changes to the device's location referenced by the watchID parameter.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Clear watch"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "watchID": {
+        "title": "WatchID",
+        "type": "number"
+      }
+    },
+    "output": {
+    }
+  }
+}

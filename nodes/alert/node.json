@@ -1,0 +1,37 @@
+{
+  "name": "alert",
+  "ns": "phonegap",
+  "title": "Alert",
+  "description": "Shows a custom alert or dialog box.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Showing Alert"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "title": {
+        "title": "Dialog title",
+        "type": "string",
+        "default": "Alert"
+      },
+      "message": {
+        "title": "Message",
+        "type": "string"
+      },
+      "buttonName": {
+        "title": "Button name",
+        "type": "string",
+        "default": "OK"
+      }
+    },
+    "output": {
+      "out": {
+        "title": "Output",
+        "type": "object"
+      }
+    }
+  }
+}

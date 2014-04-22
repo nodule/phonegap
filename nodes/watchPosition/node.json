@@ -1,0 +1,45 @@
+{
+  "name": "watchPosition",
+  "ns": "phonegap",
+  "title": "Watch for changes to the device's current position.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Watching Position"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "maximumAge": {
+        "title": "Maximum Age",
+        "type": "number",
+        "default": 10000
+      },
+      "enableHighAccuracy": {
+        "title": "Enable High Accuracy",
+        "type": "boolean",
+        "default": true
+      },
+      "timeout": {
+        "title": "Timeout",
+        "type": "boolean",
+        "default": 10000
+      }
+    },
+    "output": {
+      "watchID": {
+        "title": "Watch ID",
+        "type": "any"
+      },
+      "position": {
+        "title": "Position",
+        "type": "object"
+      },
+      "error": {
+        "title": "Error",
+        "type": "object"
+      }
+    }
+  }
+}

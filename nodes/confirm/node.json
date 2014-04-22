@@ -1,0 +1,38 @@
+{
+  "name": "confirm",
+  "ns": "phonegap",
+  "title": "Confirm",
+  "description": "Shows a custom confirmation dialog box.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Showing Confirm"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "title": {
+        "title": "Dialog title",
+        "type": "string",
+        "default": "Alert"
+      },
+      "message": {
+        "title": "Message",
+        "type": "string"
+      },
+      "buttonLabels": {
+        "title": "Button labels",
+        "description": "Comma separated string with button labels",
+        "type": "string",
+        "default": "OK,Cancel"
+      }
+    },
+    "output": {
+      "out": {
+        "title": "Output",
+        "type": "object"
+      }
+    }
+  }
+}

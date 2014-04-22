@@ -1,0 +1,24 @@
+{
+  "name": "vibrate",
+  "ns": "phonegap",
+  "title": "Vibrate",
+  "description": "Vibrates the device for the specified amount of time.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Vibrating"
+  },
+  "expose": [
+    'navigator'
+  ],
+  "ports": {
+    "input": {
+      "time": {
+        "title": "Time",
+        "type": "number",
+        "default": 1000
+      }
+    },
+    "output": {
+    }
+  }
+}
