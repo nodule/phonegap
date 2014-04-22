@@ -8,7 +8,7 @@
     "active": "Clear watch"
   },
   "expose": [
-    'navigator'
+    "navigator"
   ],
   "ports": {
     "input": {

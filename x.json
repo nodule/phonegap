@@ -1,0 +1,301 @@
+{
+  "name": "phonegap",
+  "description": "Phonegap for Chiχ",
+  "version": "0.0.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/phonegap.git"
+  },
+  "dependencies": {
+    "phonegap": "^3.4.0-0.19.17"
+  },
+  "nodes": [
+    {
+      "ports": {
+        "input": {
+          "title": {
+            "title": "Dialog title",
+            "type": "string",
+            "default": "Alert"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "buttonName": {
+            "title": "Button name",
+            "type": "string",
+            "default": "OK"
+          }
+        },
+        "output": {
+          "out": {
+            "title": "Output",
+            "type": "object"
+          }
+        }
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Showing Alert"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "Shows a custom alert or dialog box.",
+      "title": "Alert",
+      "ns": "phonegap",
+      "name": "alert",
+      "fn": "output = function() {\n\n  navigator.notification.alert(\n    input.message,\n    function(arg) {\n      cb({ out: arg || null });\n    },\n    input.title,\n    input.buttonName\n  );\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "times": {
+            "title": "Times",
+            "type": "number",
+            "default": 1
+          }
+        },
+        "output": {}
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Beeping"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "The device will play a beep sound.",
+      "title": "Beep",
+      "ns": "phonegap",
+      "name": "beep",
+      "fn": "output = function() {\n  navigator.notification.beep(input.times);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "watchID": {
+            "title": "WatchID",
+            "type": "number"
+          }
+        },
+        "output": {}
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Clear watch"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "Stop watching for changes to the device's location referenced by the watchID parameter.",
+      "title": "Clear Watch",
+      "ns": "phonegap",
+      "name": "clearWatch",
+      "fn": "output = function() {\n  navigator.geolocation.clearWatch(input.watchID};\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "title": {
+            "title": "Dialog title",
+            "type": "string",
+            "default": "Alert"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "buttonLabels": {
+            "title": "Button labels",
+            "description": "Comma separated string with button labels",
+            "type": "string",
+            "default": "OK,Cancel"
+          }
+        },
+        "output": {
+          "out": {
+            "title": "Output",
+            "type": "object"
+          }
+        }
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Showing Confirm"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "Shows a custom confirmation dialog box.",
+      "title": "Confirm",
+      "ns": "phonegap",
+      "name": "confirm",
+      "fn": "output = function() {\n\n  navigator.notification.confirm(\n    input.message,\n    function(button) {\n      cb({ out: button });\n    },\n    input.title,\n    input.buttonName\n  );\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "frequency": {
+            "title": "Frequency",
+            "type": "number",
+            "default": 10000
+          }
+        },
+        "output": {
+          "acceleration": {
+            "title": "Acceleration",
+            "type": "object"
+          },
+          "error": {
+            "title": "Error",
+            "type": "object"
+          }
+        }
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Getting Acceleration"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "The accelerometer is a motion sensor that detects the change (delta) in movement relative to the current device orientation. The accelerometer can detect 3D movement along the x, y, and z axis.",
+      "title": "Get Current Acceleration",
+      "ns": "phonegap",
+      "name": "getCurrentAcceleration",
+      "fn": "output = function() {\n\n  navigator.accelerometer.getCurrentAcceleration(function(acceleration) {\n    cb( { acceleration: acceleration });\n  }, function(err) {\n    cb( { error: err });\n  }, input);\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "maximumAge": {
+            "title": "Maximum Age",
+            "type": "number",
+            "default": 10000
+          },
+          "enableHighAccuracy": {
+            "title": "Enable High Accuracy",
+            "type": "boolean",
+            "default": true
+          },
+          "timeout": {
+            "title": "Timeout",
+            "type": "boolean",
+            "default": 10000
+          }
+        },
+        "output": {
+          "position": {
+            "title": "Position",
+            "type": "object"
+          },
+          "error": {
+            "title": "Error",
+            "type": "object"
+          }
+        }
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Getting Position"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "Geolocation provides location information for the device, such as latitude and longitude. Common sources of location information include Global Positioning System (GPS) and location inferred from network signals such as IP address, RFID, WiFi and Bluetooth MAC addresses, and GSM/CDMA cell IDs. No guarantee is given that the API returns the device's actual location.",
+      "title": "Get Current Position",
+      "ns": "phonegap",
+      "name": "getCurrentPosition",
+      "fn": "output = function() {\n\n  navigator.geolocation.getCurrentPosition(function(position) {\n    cb( { position: position });\n  }, function(err) {\n    cb( { error: err });\n  }, input);\n\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "time": {
+            "title": "Time",
+            "type": "number",
+            "default": 1000
+          }
+        },
+        "output": {}
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Vibrating"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "Vibrates the device for the specified amount of time.",
+      "title": "Vibrate",
+      "ns": "phonegap",
+      "name": "vibrate",
+      "fn": "output = function() {\n  navigator.notification.vibrate(input.time);\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
+          "maximumAge": {
+            "title": "Maximum Age",
+            "type": "number",
+            "default": 10000
+          },
+          "enableHighAccuracy": {
+            "title": "Enable High Accuracy",
+            "type": "boolean",
+            "default": true
+          },
+          "timeout": {
+            "title": "Timeout",
+            "type": "boolean",
+            "default": 10000
+          }
+        },
+        "output": {
+          "watchID": {
+            "title": "Watch ID",
+            "type": "any"
+          },
+          "position": {
+            "title": "Position",
+            "type": "object"
+          },
+          "error": {
+            "title": "Error",
+            "type": "object"
+          }
+        }
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Watching Position"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "title": "Watch for changes to the device's current position.",
+      "ns": "phonegap",
+      "name": "watchPosition",
+      "fn": "output = function() {\n\n  var watchID = navigator.geolocation.watchPosition(function(position) {\n    cb( { position: position });\n  }, function(err) {\n    cb( { error: err });\n  }, input);\n\n  cb( { watchID: watchID } );\n\n};\n"
+    }
+  ],
+  "twigs": []
+}

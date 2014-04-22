@@ -8,7 +8,7 @@
     "active": "Vibrating"
   },
   "expose": [
-    'navigator'
+    "navigator"
   ],
   "ports": {
     "input": {

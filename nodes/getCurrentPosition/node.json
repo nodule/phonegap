@@ -8,7 +8,7 @@
     "active": "Getting Position"
   },
   "expose": [
-    'navigator'
+    "navigator"
   ],
   "ports": {
     "input": {

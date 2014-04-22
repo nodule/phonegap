@@ -7,7 +7,7 @@
     "active": "Watching Position"
   },
   "expose": [
-    'navigator'
+    "navigator"
   ],
   "ports": {
     "input": {

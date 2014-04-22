@@ -8,7 +8,7 @@
     "active": "Beeping"
   },
   "expose": [
-    'navigator'
+    "navigator"
   ],
   "ports": {
     "input": {
