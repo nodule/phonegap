@@ -225,6 +225,85 @@
     {
       "ports": {
         "input": {
+          "quality": {
+            "title": "Quality",
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 75
+          },
+          "destinationType": {
+            "title": "Destination type",
+            "enum": [
+              "DATA_URL",
+              "FILE_URI"
+            ],
+            "type": "string",
+            "default": "FILE_URI"
+          },
+          "sourceType": {
+            "title": "Source type",
+            "enum": [
+              "PHOTOLIBRARY",
+              "CAMERA",
+              "SAVEDPHOTOALBUM"
+            ],
+            "type": "string",
+            "default": "CAMERA"
+          },
+          "allowEdit": {
+            "title": "Allow Edit",
+            "type": "boolean",
+            "default": true
+          },
+          "encodingType": {
+            "title": "Encoding type",
+            "enum": [
+              "JPEG",
+              "PNG"
+            ],
+            "default": "PNG"
+          },
+          "targetWidth": {
+            "title": "Target Width",
+            "type": "number",
+            "default": 1024
+          },
+          "targetHeight": {
+            "title": "Target Height",
+            "type": "number",
+            "default": 1024
+          }
+        },
+        "output": {
+          "imageData": {
+            "title": "Image Data",
+            "type": "object"
+          },
+          "error": {
+            "title": "Error",
+            "type": "object"
+          }
+        }
+      },
+      "expose": [
+        "navigator"
+      ],
+      "phrases": {
+        "active": "Taking picture"
+      },
+      "keywords": [
+        "phonegap"
+      ],
+      "description": "Opens the device's default camera application so that the user can take a picture. Once the photo is taken, the camera application closes and your application is restored.",
+      "title": "Beep",
+      "ns": "phonegap",
+      "name": "getPicture",
+      "fn": "output = function() {\n\n  navigator.camera.getPicture(function(imageData) {\n\n    cb({ imageData: imageData });\n\n  }, function(err) {\n\n    cb({ error: err });\n\n  }, {\n    quality: input.quality,\n    sourceType: Camera.PictureSourceType[input.sourceType],\n    allowEdit: input.allowEdit,\n    encodingType: Camera.EncodingType[input.encodingType],\n    targetWidth: input.targetWidth,\n    targetHeight: input.targetHeight\n  });\n};\n"
+    },
+    {
+      "ports": {
+        "input": {
           "time": {
             "title": "Time",
             "type": "number",

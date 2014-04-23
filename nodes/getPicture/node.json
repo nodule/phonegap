@@ -1,0 +1,66 @@
+{
+  "name": "getPicture",
+  "ns": "phonegap",
+  "title": "Beep",
+  "description": "Opens the device's default camera application so that the user can take a picture. Once the photo is taken, the camera application closes and your application is restored.",
+  "keywords": ["phonegap"],
+  "phrases": {
+    "active": "Taking picture"
+  },
+  "expose": [
+    "navigator"
+  ],
+  "ports": {
+    "input": {
+      "quality": {
+        "title": "Quality",
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 75
+      },
+      "destinationType": {
+        "title": "Destination type",
+        "enum": ["DATA_URL","FILE_URI"],
+        "type": "string",
+        "default": "FILE_URI"
+      },
+      "sourceType": {
+        "title": "Source type",
+        "enum": ["PHOTOLIBRARY","CAMERA","SAVEDPHOTOALBUM"],
+        "type": "string",
+        "default": "CAMERA"
+      },
+      "allowEdit": {
+        "title": "Allow Edit",
+        "type": "boolean",
+        "default": true
+      },
+      "encodingType": {
+        "title": "Encoding type",
+        "enum": ["JPEG","PNG"],
+        "default": "PNG"
+      },
+      "targetWidth": {
+        "title": "Target Width",
+        "type": "number",
+        "default": 1024
+      },
+      "targetHeight": {
+        "title": "Target Height",
+        "type": "number",
+        "default": 1024
+      }
+    },
+    "output": {
+      "imageData": {
+        "title": "Image Data",
+        "type": "object"
+      },
+      "error": {
+        "title": "Error",
+        "type": "object"
+      }
+    }
+  }
+}
