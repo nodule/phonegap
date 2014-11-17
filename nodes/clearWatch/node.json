@@ -3,7 +3,9 @@
   "ns": "phonegap",
   "title": "Clear Watch",
   "description": "Stop watching for changes to the device's location referenced by the watchID parameter.",
-  "keywords": ["phonegap"],
+  "keywords": [
+    "phonegap"
+  ],
   "phrases": {
     "active": "Clear watch"
   },
@@ -17,7 +19,6 @@
         "type": "number"
       }
     },
-    "output": {
-    }
+    "output": {}
   }
 }

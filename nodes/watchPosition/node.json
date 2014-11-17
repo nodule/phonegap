@@ -2,7 +2,9 @@
   "name": "watchPosition",
   "ns": "phonegap",
   "title": "Watch for changes to the device's current position.",
-  "keywords": ["phonegap"],
+  "keywords": [
+    "phonegap"
+  ],
   "phrases": {
     "active": "Watching Position"
   },

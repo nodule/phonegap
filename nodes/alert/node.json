@@ -3,7 +3,9 @@
   "ns": "phonegap",
   "title": "Alert",
   "description": "Shows a custom alert or dialog box.",
-  "keywords": ["phonegap"],
+  "keywords": [
+    "phonegap"
+  ],
   "phrases": {
     "active": "Showing Alert"
   },

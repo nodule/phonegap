@@ -3,7 +3,9 @@
   "ns": "phonegap",
   "title": "Confirm",
   "description": "Shows a custom confirmation dialog box.",
-  "keywords": ["phonegap"],
+  "keywords": [
+    "phonegap"
+  ],
   "phrases": {
     "active": "Showing Confirm"
   },

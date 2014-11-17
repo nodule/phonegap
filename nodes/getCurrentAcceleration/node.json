@@ -3,7 +3,9 @@
   "ns": "phonegap",
   "title": "Get Current Acceleration",
   "description": "The accelerometer is a motion sensor that detects the change (delta) in movement relative to the current device orientation. The accelerometer can detect 3D movement along the x, y, and z axis.",
-  "keywords": ["phonegap"],
+  "keywords": [
+    "phonegap"
+  ],
   "phrases": {
     "active": "Getting Acceleration"
   },
