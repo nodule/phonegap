@@ -1,12 +1,12 @@
 output = function() {
 
   navigator.notification.alert(
-    input.message,
+    $.message,
     function(arg) {
       cb({ out: arg || null });
     },
-    input.title,
-    input.buttonName
+    $.title,
+    $.buttonName
   );
 
 };

@@ -1,12 +1,12 @@
 output = function() {
 
   navigator.notification.confirm(
-    input.message,
+    $.message,
     function(button) {
       cb({ out: button });
     },
-    input.title,
-    input.buttonName
+    $.title,
+    $.buttonName
   );
 
 };
