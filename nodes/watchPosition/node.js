@@ -1,11 +1,9 @@
 output = function() {
-
   var watchID = navigator.geolocation.watchPosition(function(position) {
-    cb( { position: position });
+    cb( { position: $.create(position) });
   }, function(err) {
-    cb( { error: err });
+    cb( { error: $.create(err) });
   }, input);
 
-  cb( { watchID: watchID } );
-
+  cb( { watchID: $.create(watchID) } );
 };

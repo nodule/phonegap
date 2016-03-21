@@ -1,13 +1,8 @@
 output = function() {
-
   navigator.camera.getPicture(function(imageData) {
-
-    cb({ imageData: imageData });
-
+    cb({ imageData: $.create(imageData) });
   }, function(err) {
-
-    cb({ error: err });
-
+    cb({ error: $.create(err) });
   }, {
     quality: $.quality,
     sourceType: Camera.PictureSourceType[$.sourceType],
